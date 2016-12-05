@@ -76,6 +76,8 @@ PRODUCT_PACKAGES += \
     mount.exfat \
     fsck.exfat \
     mkfs.exfat \
+    make_f2fs \
+    fsck.f2fs \
     fibmap.f2fs \
     mkfs.ntfs \
     fsck.ntfs \

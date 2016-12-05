@@ -48,29 +48,10 @@ PRODUCT_COPY_FILES += \
     vendor/aosp/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/aosp/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 
-# Init file
-PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/etc/init.local.rc:root/init.aosp.rc
-
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
     vendor/aosp/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
     vendor/aosp/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
-
-# SuperSU
-ifeq ($(BOARD_VENDOR),sony)
-PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/etc/UPDATE-SuperSU-2.52.zip:system/addon.d/UPDATE-SuperSU.zip \
-    vendor/aosp/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
-else
-PRODUCT_COPY_FILES += \
-   vendor/aosp/prebuilt/common/etc/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
-   vendor/aosp/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
-endif
-
-# Substratum
-PRODUCT_COPY_FILES += \
-vendor/aosp/prebuilt/common/app/Substratum/Substratum.apk:system/app/Substratum/Substratum.apk
    
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -95,8 +76,6 @@ PRODUCT_PACKAGES += \
     mount.exfat \
     fsck.exfat \
     mkfs.exfat \
-    mkfs.f2fs \
-    fsck.f2fs \
     fibmap.f2fs \
     mkfs.ntfs \
     fsck.ntfs \
